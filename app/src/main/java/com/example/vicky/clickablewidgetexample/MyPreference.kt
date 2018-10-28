@@ -13,7 +13,7 @@ class MyPreference(context: Context){
 
     fun updateWidgetIds(ids : MutableSet<String>){
         val editor = preference.edit()
-        val newSet = mutableSetOf<String>()
+        val newSet = mutableSetOf<String>() // Updating same object into SharedPreferences won't work. So creating new Object
         newSet.addAll(ids)
         editor.putStringSet(PREFERENCE_WIDGET_ID,newSet)
         editor.apply()
